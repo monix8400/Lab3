@@ -5,30 +5,75 @@ using std::string;
 
 class Tree
 {
+    friend class Node;
+
 private:
     Node* root;
 
+    ///default constructor 
+    Tree(); 
+    
 public:
-    Tree();
+    ///constructor
     Tree(int v);
-    ~Tree();
-    void insert(int v, Node* node);
-    void insert(int v);
-    Node* remove(int v, Node* node);
-    void remove(int v);
-    string inorder(Node* node);
-    string inorder();
-    string preorder(Node* node);
-    string preorder();
-    string postorder(Node* node);
-    string postorder();
-    Node* min_node(Node* node);
-    int countNodes(Node* node);
-    int countNodes();
-    int countEdges(Node* node);
-    int countEdges();
-    int countLeafs(Node* node);
-    int countLeafs();
-    int height(Node* node);
-    int height();
+
+    ///destructor
+    ~Tree();  
+
+    ///insert a node
+    void insert(int v, Node* node); 
+
+    ///insert root
+    void insert(int v); 
+
+    ///delete a node
+    Node* remove(int v, Node* node); 
+
+    ///delete root
+    void remove(int v); 
+
+    ///public string inorder
+    string inorder(Node* node); 
+
+    ///public string inorder
+    string inorder(); 
+
+    ///public string preorder
+    string preorder(Node* node); 
+
+    ///public string preorder
+    string preorder();  
+
+    ///public string postorder
+    string postorder(Node* node); 
+
+    ///public string postorder
+    string postorder(); 
+
+    ///get the first node
+    Node* min_node(Node* node); 
+
+    ///count the number of nodes
+    int countNodes(Node* node); 
+
+    ///count the number of nodes
+    int countNodes(); 
+
+    ///count the number of edges
+    int countEdges(Node* node); 
+
+    ///count the number of edges
+    int countEdges(); 
+
+    ///count the number of leafs
+    int countLeafs(Node* node); 
+
+    ///count the number of leafs
+    int countLeafs(); 
+
+    ///count the height
+    int height(Node* node); 
+
+    ///count the height
+    int height(); 
 };

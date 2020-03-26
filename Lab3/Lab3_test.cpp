@@ -1,7 +1,7 @@
 #include "Lab3_test.h"
 #include <cassert>
 
-//test for countNodes
+///test for countNodes
 void test_countNodes()
 {
 	Tree tree(1);
@@ -10,7 +10,7 @@ void test_countNodes()
 	assert(tree.countNodes() == 3);
 }
 
-//test for countEdges
+///test for countEdges
 void test_countEdges()
 {
 	Tree tree(1);
@@ -19,7 +19,7 @@ void test_countEdges()
 	assert(tree.countEdges() == 2);
 }
 
-//test the number of Leafs
+///test the number of Leafs
 void test_countLeafs()
 {
 	Tree tree(1);
@@ -28,7 +28,7 @@ void test_countLeafs()
 	assert(tree.countNodes() == 3);
 }
 
-//test for height
+///test for height
 void test_height()
 {
 	Tree tree(1);

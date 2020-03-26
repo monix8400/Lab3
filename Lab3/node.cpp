@@ -1,13 +1,14 @@
 #include "Node.h"
 
-//default constructor
+///default constructor
 Node::Node()
 {
     this->right = nullptr;
     this->left = nullptr;
     this->val = 0;
 }
-//constructor
+
+///constructor
 Node::Node(int vl)
 {
     this->right = nullptr;
@@ -15,7 +16,7 @@ Node::Node(int vl)
     this->val = vl;
 }
 
-//destructor
+///destructor
 Node::~Node()
 {
     delete right;

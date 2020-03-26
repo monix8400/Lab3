@@ -4,25 +4,26 @@
 using std::to_string;
 using std::max;
 
-//default constructor
+
+///default constructor
 Tree::Tree()
 {
     root = new Node(0);
 }
 
-//constructor
+///constructor
 Tree::Tree(int v)
 {
     root = new Node(v);
 }
 
-//destructor
+///destructor
 Tree::~Tree()
 {
     delete root;
 }
 
-//insert a node
+///insert a node
 void Tree::insert(int v, Node* tree)
 {
     if (v <= tree->val)
@@ -53,13 +54,13 @@ void Tree::insert(int v, Node* tree)
     }
 }
 
-//insert root
+///insert root
 void Tree::insert(int v)
 {
     insert(v, root);
 }
 
-//delete a node
+///delete a node
 Node* Tree::remove(int v, Node* tree)
 {
     if (tree == nullptr)
@@ -103,12 +104,13 @@ Node* Tree::remove(int v, Node* tree)
     return tree;
 }
 
+///delete root
 void Tree::remove(int v)
 {
     root = remove(v, root);
 }
 
-//inorder
+///public string inorder
 string Tree::inorder(Node* n)
 {
     if (n == nullptr)
@@ -118,12 +120,14 @@ string Tree::inorder(Node* n)
     return inorder(n->left) + to_string(n->val) + " " + inorder(n->right);
 }
 
+///public string inorder
 string Tree::inorder()
 {
     return inorder(root);
 }
 
-//preorder
+
+///public string preorder
 string Tree::preorder(Node* n)
 {
     if (n == nullptr)
@@ -133,12 +137,13 @@ string Tree::preorder(Node* n)
     return  to_string(n->val) + " " + preorder(n->left) + preorder(n->right);
 }
 
+///public string preorder
 string Tree::preorder()
 {
     return preorder(root);
 }
 
-//postorder
+///public string postorder
 string Tree::postorder(Node* n)
 {
     if (n == nullptr)
@@ -148,12 +153,13 @@ string Tree::postorder(Node* n)
     return preorder(n->left) + preorder(n->right) + to_string(n->val) + " ";
 }
 
+///public string postorder
 string Tree::postorder()
 {
     return postorder(root);
 }
 
-//get the first node
+///get the first node
 Node* Tree::min_node(Node* node)
 {
     if (node == nullptr)
@@ -164,7 +170,7 @@ Node* Tree::min_node(Node* node)
     return c;
 }
 
-//count the number of nodes
+///count the number of nodes
 int Tree::countNodes(Node* n)
 {
     if (n == nullptr)
@@ -172,12 +178,13 @@ int Tree::countNodes(Node* n)
     return 1 + countNodes(n->left) + countNodes(n->right);
 }
 
+///count the number of nodes
 int Tree::countNodes()
 {
     return countNodes(root);
 }
 
-//count the number of edges
+///count the number of edges
 int Tree::countEdges(Node* n)
 {
     if (n == nullptr)
@@ -185,12 +192,13 @@ int Tree::countEdges(Node* n)
     return countNodes(root) - 1;
 }
 
+///count the number of edges
 int Tree::countEdges()
 {
     return countEdges(root);
 }
 
-//count the number of leafs
+///count the number of leafs
 int Tree::countLeafs(Node* node)
 {
     if (node == nullptr)
@@ -200,12 +208,13 @@ int Tree::countLeafs(Node* node)
     return countLeafs(node->left) + countLeafs(node->right);
 }
 
+///count the number of leafs
 int Tree::countLeafs()
 {
     return countLeafs(root);
 }
 
-//count the height
+///count the height
 int Tree::height(Node* n)
 {
     if (n == nullptr)
@@ -213,6 +222,7 @@ int Tree::height(Node* n)
     return 1 + max(height(n->left), height(n->right));
 }
 
+///count the height
 int Tree::height()
 {
     return height(root);

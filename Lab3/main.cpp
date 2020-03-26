@@ -1,4 +1,5 @@
 #include "Tree.h"
+#include "node.h"
 #include "Lab3_test.h"
 using std::cout;
 using std::endl;
